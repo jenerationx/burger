@@ -13,7 +13,7 @@
       <h2>Available Burgers</h2>
       <ul>
         {{#each burgers}}
-        {{#unless this.devoured}}
+        {{#unless devoured}}
         {{> burgers/burger-block devour=false}}
         {{/unless}}
         {{/each}}
@@ -24,7 +24,7 @@
 
       <ul>
         {{#each burgers}}
-        {{#if this.devoured}}
+        {{#if devoured}}
         {{> burgers/burger-devoured devour=true}}
         {{/if}}
         {{/each}}
