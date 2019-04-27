@@ -1,9 +1,9 @@
 <div class="text-center">
-
+  <h1 class="mt-5">Eat Da Burger!</h1>
+ <br>
   <img class="img" src="/assets/img/happyburger.png" alt="burger-pic">
-  <br><br>
-  <h1>Eat Da Burger!</h1>
-  <br>
+ 
+  <br><br><br>
   <h2>Click on any burger's devour button to devour it!</h2>
 </div>
 <br><br>
@@ -14,7 +14,7 @@
       <ul>
         {{#each burgers}}
         {{#unless this.devoured}}
-        {{> burgers/burger-block devoured=false}}
+        {{> burgers/burger-block devour=false}}
         {{/unless}}
         {{/each}}
       </ul>
@@ -25,7 +25,7 @@
       <ul>
         {{#each burgers}}
         {{#if this.devoured}}
-        <li class="list-group-item list-group-item-secondary">{{burger_name}}</li> 
+        {{> burgers/burger-devoured devour=true}}
         {{/if}}
         {{/each}}
       </ul>
@@ -38,10 +38,10 @@
       <h2>Add a Burger</h2>
     </div>
   </div>
-  <form class="col-4 mb-5">
+  <form class="col-4 mb-5" id="add-burger">
     <div class="form-group">
-      <label for="burger-name">Name of Burger:</label>
-      <textarea class="form-control" id="burger-name" rows="1"></textarea>
+      <label for="burger">Name of Burger:</label>
+      <input type="text" class="form-control" id="burger-name" placeholder=""></input>
     </div>
-    <button id="add-burger" type="submit">Add Burger</button>
+    <button type="submit">Add Burger</button>
   </form>
