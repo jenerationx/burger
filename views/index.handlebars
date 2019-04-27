@@ -1,39 +1,47 @@
-<img src="/assets/img/happyburger.png" alt="burger-pic">
-<h1>Eat Da Burger!</h1>
+<div class="text-center">
 
-<h2>Click on a burger to devour it!</h2>
+  <img class="img" src="/assets/img/happyburger.png" alt="burger-pic">
+  <br><br>
+  <h1>Eat Da Burger!</h1>
+  <br>
+  <h2>Click on any burger's devour button to devour it!</h2>
+</div>
+<br><br>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2>Available Burgers</h2>
+      <ul>
+        {{#each burgers}}
+        {{#unless devoured}}
+        {{> burgers/burger-block devoured=false}}
+        {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+    <div class="col">
+      <h2>Devoured Burgers</h2>
 
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-    {{burger_name}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Devoured Burgers</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-    {{burger_name}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="burger">Burger Name:</label>
-    <input type="text" id="burger" name="name">
+      <ul>
+        {{#each burgers}}
+        {{#if devoured}}
+        <li class="list-group-item list-group-item-secondary">{{burger_name}}</li>
+        {{/if}}
+        {{/each}}
+      </ul>
+    </div>
   </div>
 
-  <div class="form-group">
-    <label for="devoured">Devoured</label><br>
-    <input type="radio" name="devoured" value="1" checked> Available<br>
-    <input type="radio" name="devoured" value="0"> Devoured
+  <br><br>
+  <div class="container">
+    <div class="row">
+      <h2>Add a Burger</h2>
+    </div>
   </div>
-
-  <button type="submit">Add Burger</button>
-</form>
+  <form class="col-4">
+    <div class="form-group">
+      <label for="burger-name">Name of Burger:</label>
+      <textarea class="form-control" id="burger-name" rows="2"></textarea>
+    </div>
+    <button id="add-burger" type="submit">Add Burger</button>
+  </form>
