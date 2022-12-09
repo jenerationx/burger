@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/jenerationx/burger#readme",
   "dependencies": {
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "express-handlebars": "^3.0.2",
     "mysql": "^2.17.1"
   }
